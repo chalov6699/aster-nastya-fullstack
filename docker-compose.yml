@@ -1,0 +1,15 @@
+services:
+  aster:
+    build: .
+    ports:
+      - "8787:8787"
+    env_file:
+      - .env
+    volumes:
+      - aster-data:/app/data
+      - aster-uploads:/app/uploads
+    restart: unless-stopped
+
+volumes:
+  aster-data:
+  aster-uploads:
